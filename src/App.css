@@ -5,8 +5,8 @@
 .grid-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 45px;
-  padding: 45px;
+  gap: 100px;
+  padding: 0px;
 }
 
 .card {
