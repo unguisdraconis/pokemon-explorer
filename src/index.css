@@ -1,15 +1,20 @@
 :root {
-  --text: #6b6375;
-  --text-h: #08060d;
-  --bg: #fff;
-  --border: #e5e4e7;
-  --code-bg: #f4f3ec;
-  --accent: #aa3bff;
-  --accent-bg: rgba(170, 59, 255, 0.1);
-  --accent-border: rgba(170, 59, 255, 0.5);
-  --social-bg: rgba(244, 243, 236, 0.5);
+  /* Refined, higher-contrast “clean neutral + violet” palette */
+  --text: #5b5566; /* softer than near-black, but clearer than #6b6375 */
+  --text-h: #14101d; /* deep ink for headings */
+  --bg: #fbfbfd; /* subtle off-white to reduce glare */
+  --border: #e6e3ee; /* slightly cooler, cleaner divider */
+  --code-bg: #f3f1f8; /* gentle lavender-tinted code surface */
+
+  --accent: #7c3aed; /* modern violet (more balanced than neon purple) */
+  --accent-bg: rgba(124, 58, 237, 0.12);
+  --accent-border: rgba(124, 58, 237, 0.45);
+
+  --social-bg: rgba(243, 241, 248, 0.7);
+
   --shadow:
-    rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
+    rgba(17, 24, 39, 0.08) 0 10px 15px -3px,
+    rgba(17, 24, 39, 0.05) 0 4px 6px -2px;
 
   --sans: system-ui, "Segoe UI", Roboto, sans-serif;
   --heading: system-ui, "Segoe UI", Roboto, sans-serif;
@@ -32,17 +37,20 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --text: #9ca3af;
-    --text-h: #f3f4f6;
-    --bg: #16171d;
-    --border: #2e303a;
-    --code-bg: #1f2028;
-    --accent: #c084fc;
-    --accent-bg: rgba(192, 132, 252, 0.15);
-    --accent-border: rgba(192, 132, 252, 0.5);
-    --social-bg: rgba(47, 48, 58, 0.5);
+    --text: #a7adbd; /* slightly brighter for readability */
+    --text-h: #f4f5fb; /* crisp heading white */
+    --bg: #12131a; /* deeper neutral (less “washed” than #16171d) */
+    --border: #2a2c39; /* clearer separation without harshness */
+    --code-bg: #1b1c26; /* distinct from bg, still subtle */
+
+    --accent: #a78bfa; /* balanced violet for dark mode */
+    --accent-bg: rgba(167, 139, 250, 0.16);
+    --accent-border: rgba(167, 139, 250, 0.5);
+
+    --social-bg: rgba(27, 28, 38, 0.7);
+
     --shadow:
-      rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
+      rgba(0, 0, 0, 0.45) 0 10px 15px -3px, rgba(0, 0, 0, 0.28) 0 4px 6px -2px;
   }
 
   #social .button-icon {
@@ -82,6 +90,7 @@ h1 {
     margin: 20px 0;
   }
 }
+
 h2 {
   font-size: 24px;
   line-height: 118%;
@@ -91,6 +100,7 @@ h2 {
     font-size: 20px;
   }
 }
+
 p {
   margin: 0;
 }
