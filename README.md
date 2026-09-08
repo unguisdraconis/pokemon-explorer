@@ -6,6 +6,8 @@ A React Foundation learning exercise built before the D3 Loves React course intr
 
 [Explore the Pokémon card collection](https://unguisdraconis.github.io/pokemon-explorer/)
 
+![A React Foundation Pokémon Explorer with a list of 20 Pokémon](docs/images/pokemon-explorer.png)
+
 ## Assignment context
 
 The React Foundation assignment asked learners to build a small project from scratch with Vite and npm, render a grid of Pokémon cards, add simple interactions, and deploy the result. The implementation stays close to that learning scope while adding stat filters and interactive flip cards.
