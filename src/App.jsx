@@ -69,19 +69,24 @@ function PokemonCard({ pokemon }) {
   return (
     <div
       className={`card ${flipped ? "is-flipped" : ""}`}
-      aria-label={`Card for ${pokemon.name}`}
+      aria-label={
+        flipped
+          ? `${pokemon.name} card. Type: ${pokemon.type}. HP: ${pokemon.hp}. Attack: ${pokemon.attack}. Activate to flip.`
+          : `${pokemon.name} card. Showing artwork. Activate to flip.`
+      }
+      aria-pressed={flipped}
       role="button"
       tabIndex={0}
       onClick={toggleFlip}
       onKeyDown={handleKeyDown}
     >
       <div className="card-inner">
-        <div className="card-face card-front">
+        <div className="card-face card-front" aria-hidden={flipped}>
           <img src={getPokemonSpriteUrl(pokemon.id)} alt={pokemon.name} />
           <h2>{pokemon.name}</h2>
         </div>
 
-        <div className="card-face card-back">
+        <div className="card-face card-back" aria-hidden={!flipped}>
           <h2>{pokemon.name}</h2>
           <div className="stats">
             <p>
@@ -127,9 +132,14 @@ export default function App() {
     <div className="App">
       <h1>Pokémon Explorer</h1>
 
-      <div className="filters">
+      <div
+        className="filters"
+        role="group"
+        aria-label="Filter by Pokémon type"
+      >
         <button
           className={`filter-button ${selectedType === "All" ? "active" : ""}`}
+          aria-pressed={selectedType === "All"}
           onClick={() => setSelectedType("All")}
         >
           All
@@ -138,6 +148,7 @@ export default function App() {
           <button
             key={type}
             className={`filter-button ${selectedType === type ? "active" : ""}`}
+            aria-pressed={selectedType === type}
             onClick={() => setSelectedType(type)}
           >
             {type}
@@ -172,9 +183,15 @@ export default function App() {
       </div>
 
       <div className="grid-container">
-        {filteredPokemons.map((pokemon) => (
-          <PokemonCard key={pokemon.id} pokemon={pokemon} />
-        ))}
+        {filteredPokemons.length > 0 ? (
+          filteredPokemons.map((pokemon) => (
+            <PokemonCard key={pokemon.id} pokemon={pokemon} />
+          ))
+        ) : (
+          <p className="empty-message" role="status">
+            No Pokémon match these filters.
+          </p>
+        )}
       </div>
 
       <footer className="footer">

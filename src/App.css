@@ -22,6 +22,11 @@
   margin: 0 auto;
 }
 
+.card:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 4px;
+}
+
 .card-inner {
   position: relative;
   width: 100%;
@@ -82,6 +87,12 @@
 
 .stats p {
   margin: 0;
+}
+
+.empty-message {
+  grid-column: 1 / -1;
+  padding: 40px 20px;
+  color: var(--text);
 }
 
 .filters {
